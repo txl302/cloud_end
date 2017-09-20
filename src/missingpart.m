@@ -22,7 +22,7 @@ function varargout = missingpart(varargin)
 
 % Edit the above text to modify the response to help missingpart
 
-% Last Modified by GUIDE v2.5 20-Sep-2017 10:27:24
+% Last Modified by GUIDE v2.5 20-Sep-2017 13:42:50
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -61,6 +61,11 @@ guidata(hObject, handles);
 % UIWAIT makes missingpart wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
 
+axes(handles.axes1);
+imshow(imread('../resource/logo.png'));
+axes(handles.axes2);
+imshow(imread('../resource/black.bmp'));
+
 
 % --- Outputs from this function are returned to the command line.
 function varargout = missingpart_OutputFcn(hObject, eventdata, handles) 
@@ -80,3 +85,12 @@ function tBn_ContiUpdate_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 % Hint: get(hObject,'Value') returns toggle state of tBn_ContiUpdate
+
+
+% --- Executes on button press in Bn_TrainModel.
+function Bn_TrainModel_Callback(hObject, eventdata, handles)
+% hObject    handle to Bn_TrainModel (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+open('Training.fig');
